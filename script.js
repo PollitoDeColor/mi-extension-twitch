@@ -1,7 +1,7 @@
 const pollito = document.getElementById('pollito');
 const papas = document.getElementById('papas');
 const clientId = 'h0e4jzi6yq25cyjqykx49ut7i9hqkg';
-const redirectUri = 'https://github.com/PollitoDeColor/mi-extension-twitch/blob/main/index.html';
+const redirectUri = 'https://pollitodecolor.github.io/mi-extension-twitch/';
 
 // Función para obtener las coordenadas del clic en relación con el documento
 function getRelativeCoordinates(event) {
