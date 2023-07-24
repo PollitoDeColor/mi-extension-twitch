@@ -29,7 +29,7 @@ function movePollitoTo(x, y) {
 }
 
 // Agregar el evento de clic al botón "Iniciar sesión con Twitch"
-const loginButton = document.getElementById('login-button');
+/*const loginButton = document.getElementById('login-button');
 loginButton.addEventListener('click', () => {
   // Redirigir al usuario a la página de autorización de Twitch
   window.location.href = `https://id.twitch.tv/oauth2/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=token`;
@@ -41,19 +41,15 @@ let accessToken;
 if (window.location.hash) {
   const urlParams = new URLSearchParams(window.location.hash.substring(1));
   accessToken = urlParams.get('access_token');
-}
+}*/
 
 // Agregar el evento de clic solo a la ventana para mover el pollito
 window.addEventListener('click', (event) => {
-  // Verificar si el usuario tiene un token de acceso válido
-  if (accessToken) {
     // Obtener las coordenadas del clic en relación con la ventana del navegador
     const x = event.clientX;
     const y = event.clientY;
-
     // Mover el pollito hacia las nuevas coordenadas
     movePollitoTo(x, y);
-  }
 });
 
 let papasVisible = true;
@@ -96,7 +92,7 @@ document.addEventListener('click', (event) => {
 });
 
 // Función para obtener información del usuario autenticado usando el token de acceso
-async function getUserInfo(accessToken) {
+/*async function getUserInfo(accessToken) {
   try {
     const response = await fetch('https://api.twitch.tv/helix/users', {
       headers: {
@@ -126,4 +122,4 @@ if (accessToken) {
     .catch((error) => {
       console.error(error);
     });
-}
+}*/
