@@ -94,36 +94,3 @@ document.addEventListener('click', (event) => {
     }
   }
 });
-
-// Función para obtener información del usuario autenticado usando el token de acceso
-async function getUserInfo(accessToken) {
-  try {
-    const response = await fetch('https://api.twitch.tv/helix/users', {
-      headers: {
-        'Authorization': `Bearer ${accessToken}`,
-        'Client-ID': clientId
-      }
-    });
-
-    if (!response.ok) {
-      throw new Error('Error al obtener información del usuario');
-    }
-
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-// Llamar a la función para obtener información del usuario cuando tengas el token de acceso
-if (accessToken) {
-  getUserInfo(accessToken)
-    .then((userData) => {
-      console.log(userData);
-      // Aquí puedes usar la información del usuario como lo necesites en tu extensión
-    })
-    .catch((error) => {
-      console.error(error);
-    });
-}
