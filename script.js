@@ -28,21 +28,6 @@ function movePollitoTo(x, y) {
   pollito.style.top = currentY + dy + 'px';
 }
 
-// Agregar el evento de clic al botón "Iniciar sesión con Twitch"
-const loginButton = document.getElementById('login-button');
-loginButton.addEventListener('click', () => {
-  // Redirigir al usuario a la página de autorización de Twitch
-  window.location.href = `https://id.twitch.tv/oauth2/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=token`;
-});
-
-let accessToken;
-
-// Obtener el token de acceso después de la redirección
-if (window.location.hash) {
-  const urlParams = new URLSearchParams(window.location.hash.substring(1));
-  accessToken = urlParams.get('access_token');
-}
-
 // Agregar el evento de clic solo a la ventana para mover el pollito
 window.addEventListener('click', (event) => {
   // Verificar si el usuario tiene un token de acceso válido
